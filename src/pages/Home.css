@@ -1,0 +1,25 @@
+.intro-container {
+    background-color: red;
+    border-radius: 3px;
+    margin-bottom: 6;
+    padding: 3;
+    align-items: center;
+}
+
+.names-container{
+    display: flex;
+    flex-grow: 1;
+}
+
+.profile-container{
+    flex-shrink: 0;
+}
+
+.profile-picture{
+    border-color: #fff;
+    border-width: 2;
+    border-style: solid;
+    max-width: 150px;
+    display: inline-block;
+    border-radius: 100px;
+}

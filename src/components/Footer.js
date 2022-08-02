@@ -1,20 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Button } from "./Button";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <div className="footer-container">
       <section class="social-media">
-        <div class="social-mdeia-wrap">
+        <div class="social-media-wrap">
           <div class="footer-logo">
             <Link to="/" className="social-logo">
               HOME
               <i class="fab fa-typo3" />
             </Link>
           </div>
-          <small class="website-rights">Temp © 2022</small>
+          <small class="website-rights">Mike Yang © 2022</small>
           <div class="social-icons">
             <Link
               class="social-icon-link linkedin"
