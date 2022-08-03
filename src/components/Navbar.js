@@ -1,71 +1,87 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "./Button";
-import "./Navbar.css";
+import React from "react";
+import { useState, useEffect } from "react";
+import { Navbar, Nav, Container } from "react-bootstrap";
 
-function Navbar() {
-  const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
-
-  const handleClick = () => setClick(!click);
-
-  const closeMobileMenu = () => setClick(false);
-
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
+export const NavBar = () => {
+  const [activeLink, setActiveLink] = useState("home");
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    showButton();
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  window.addEventListener("resize", showButton);
+  const onUpdateActiveLink = (value) => {
+    setActiveLink(value);
+  };
 
   return (
-    <>
-      <nav className="navbar">
-        <div className="navbar-container">
-          <Link to="/" className="navBar-logo">
-            TRVL <i className="fab fa-typo3" />
-          </Link>
-          <div className="menu-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"} />
-          </div>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/page1" className="nav-links" onClick={closeMobileMenu}>
-                page1
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/page2" className="nav-links" onClick={closeMobileMenu}>
-                page2
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/sign-up"
-                className="nav-links-mobile"
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
-            </li>
-          </ul>
-          {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
-        </div>
-      </nav>
-    </>
+    <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
+      <Container>
+        <Navbar.Brand href="#home">
+          <img src={""} alt="Logo" />
+          Mike Yang
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav">
+          <span className="navBar-toggler-icon"></span>
+        </Navbar.Toggle>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link
+              href="#home"
+              className={
+                activeLink === "home" ? "active navbar-link" : "navbar-link"
+              }
+              onClick={() => onUpdateActiveLink("home")}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
+              href="#skills"
+              className={
+                activeLink === "skills" ? "active navbar-link" : "navbar-link"
+              }
+              onClick={() => onUpdateActiveLink("skills")}
+            >
+              Skills
+            </Nav.Link>
+            <Nav.Link
+              href="#projects"
+              className={
+                activeLink === "projects" ? "active navbar-link" : "navbar-link"
+              }
+              onClick={() => onUpdateActiveLink("projects")}
+            >
+              Projects
+            </Nav.Link>
+          </Nav>
+          <span className="navbar-text">
+            <div className="social-icon">
+              <a href="#">
+                <img src={""} alt=""></img>
+              </a>
+              <a href="#">
+                <img src={""} alt=""></img>
+              </a>
+              <a href="#">
+                <img src={""} alt=""></img>
+              </a>
+            </div>
+            <button className="vvd" onClick={() => console.log("connect")}>
+              <span>Let's Connect</span>
+            </button>
+          </span>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
-}
-
-export default Navbar;
+};
