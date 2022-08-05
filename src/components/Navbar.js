@@ -1,6 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import logo_instagram from "../assets/logos/instagram-logo.svg";
+import logo_github from "../assets/logos/github-logo.svg";
+import logo_linkedin from "../assets/logos/linkedin-logo.svg";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
@@ -28,8 +31,10 @@ export const NavBar = () => {
     <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
       <Container>
         <Navbar.Brand href="#home">
-          <img src={""} alt="Logo" />
-          Mike Yang
+          <img src={logo_instagram} alt="Logo" />
+          <div>
+            <h5>Mike Yang</h5>
+          </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="navBar-toggler-icon"></span>
@@ -37,13 +42,15 @@ export const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link
-              href="#home"
+              href="#experience"
               className={
-                activeLink === "home" ? "active navbar-link" : "navbar-link"
+                activeLink === "experience"
+                  ? "active navbar-link"
+                  : "navbar-link"
               }
-              onClick={() => onUpdateActiveLink("home")}
+              onClick={() => onUpdateActiveLink("experience")}
             >
-              Home
+              Experience
             </Nav.Link>
             <Nav.Link
               href="#skills"
@@ -67,13 +74,13 @@ export const NavBar = () => {
           <span className="navbar-text">
             <div className="social-icon">
               <a href="#">
-                <img src={""} alt=""></img>
+                <img src={logo_linkedin} alt=""></img>
               </a>
               <a href="#">
-                <img src={""} alt=""></img>
+                <img src={logo_github} alt=""></img>
               </a>
               <a href="#">
-                <img src={""} alt=""></img>
+                <img src={logo_instagram} alt=""></img>
               </a>
             </div>
             <button className="vvd" onClick={() => console.log("connect")}>
