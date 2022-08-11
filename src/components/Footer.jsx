@@ -1,7 +1,7 @@
 import React from "react";
 
-function Footer() {
-  return <div>Footer</div>;
-}
+export const Footer = () => {
+  return <div className="nav-wrapper active" id="nav-wrapper"></div>;
+};
 
 export default Footer;

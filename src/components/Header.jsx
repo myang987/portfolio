@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import "../styles/Header.scss";
+import "../styles/Header.css";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -32,3 +33,5 @@ export const Header = () => {
     </div>
   );
 };
+
+export default Header;
