@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../styles/Header.css";
+import "../styles/Header.scss";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
@@ -24,9 +24,9 @@ export const Header = () => {
           </li>
 
           <li className="menu-item">
-            <a href="" target="_blank">
+            <Link to="/">
               <h3>Resume</h3>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

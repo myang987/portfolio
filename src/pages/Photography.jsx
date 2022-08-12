@@ -1,8 +1,14 @@
 import React from "react";
-import "../styles/Photography.css";
+import "../styles/Photography.scss";
 
 export const Photography = () => {
-  return <div>photography</div>;
+  return (
+    <div className="background">
+      <div className="photography-page">
+        <h1>Photography</h1>
+      </div>
+    </div>
+  );
 };
 
 export default Photography;
