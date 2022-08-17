@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Manjari");
+@import url("https://fonts.googleapis.com/css2?family=Manrope");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display");
+
+// 0. Margins
+$default-margin-width: 65%;
+$default-mobile-margin-width: 95%;
+$mobile-view-max-width: 600px;
+$default-small-margin-width: 65%;
+
+// Change this value to adjust margin amounts for below
+$scaling-value: 0.04;
+
+body {
+  overscroll-behavior: none;
+}
+
+// Bottom Margins, currently only used for access
+.margin-bottom-12px {
+  margin-bottom: (12vw * $scaling-value) !important;
+}
+
+.margin-bottom-16px {
+  margin-bottom: (16vw * $scaling-value) !important;
+}
+
+.margin-bottom-24px {
+  margin-bottom: (24vw * $scaling-value) !important;
+}
+
+.margin-bottom-32px {
+  margin-bottom: (32vw * $scaling-value) !important;
+}
+
+.margin-bottom-36px {
+  margin-bottom: (36vw * $scaling-value) !important;
+}
+
+.margin-bottom-40px {
+  margin-bottom: (40vw * $scaling-value) !important;
+}
+
+.margin-bottom-60px {
+  margin-bottom: (60vw * $scaling-value) !important;
+}
+
+.margin-bottom-80px {
+  margin-bottom: (80vw * $scaling-value) !important;
+}
+
+.margin-bottom-100px {
+  margin-bottom: (100vw * $scaling-value) !important;
+}
+
+.margin-bottom-120px {
+  margin-bottom: (120vw * $scaling-value) !important;
+}
+
+.margin-bottom-160px {
+  margin-bottom: (160vw * $scaling-value) !important;
+}
+
+// Right Paddings
+.right-padding-28px {
+  padding-right: (28vw * $scaling-value) !important;
+}
+
+// 1. Colours
+$off-white: #fafafa;
+$white: #ffffff;
+$finwell-blue: #0b22b8;
+$black: #000000;
+$off-black: #101010;
+$lilac: #ddd3fc;
+$background-color: #fcf9ff;
+$light-blue: #bacbff;
+$grey-999999: #999999;
+$light-aprio-orange: #ffdfc7;
+$aprio-orange: #ff6d00;
+
+$main-background-colour-dark: $black;
+
+.background {
+  background-color: $main-background-colour-dark;
+}
+
+// 2. Fonts
+$base-font-family: Manjari, Manrope, Verdana, sans-serif;
+$manrope-font-family: Manrope, sans-serif;
+$major-mono-display-font-family: Major Mono Display, sans-serif;
+$inter-font-family: Inter, sans-serif;
+
+.body-font {
+  font-family: $base-font-family;
+  font-size: max(1.5vw, 24px);
+  line-height: max(2.25vw, 36px);
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1 {
+  font-family: $manrope-font-family;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 6vw;
+  line-height: 110%;
+  color: $off-white;
+}
+
+h2 {
+  font-family: $manrope-font-family;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25vw;
+  line-height: 150%;
+  color: $off-white;
+}
+
+h3 {
+  font-family: $manrope-font-family;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.1vw;
+  line-height: 150%;
+  color: $off-white;
+}
+
+.b0 {
+  font-family: $manrope-font-family;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.8vw;
+  line-height: 150%;
+  color: $off-white;
+}
+
+.b1-light {
+  font-family: $manrope-font-family;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.35vw;
+  line-height: 150%;
+  color: $off-white;
+}
+
+.b2 {
+  font-family: $manrope-font-family;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.25vw;
+  line-height: 150%;
+  color: $off-white;
+}
+
+.b3 {
+  font-family: $manrope-font-family;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.9375vw;
+  line-height: 200%;
+  color: $grey-999999;
+}
+
+.b4 {
+  font-family: $manrope-font-family;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.9375vw;
+  line-height: 200%;
+  color: $grey-999999;
+}
+
+.b5 {
+  font-family: $manrope-font-family;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.15vw;
+  line-height: 130%;
+  letter-spacing: 0.1em;
+}
+
+.b6 {
+  font-family: $manrope-font-family;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.15vw;
+  line-height: 150%;
+  color: $off-white;
+}
+
+.manrope-24px-300weight {
+  font-family: $manrope-font-family;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.1vw; // Scaled up
+  line-height: 150%;
+  color: $off-white;
+}
+
+.blue-text {
+  color: $finwell-blue;
+}
+
+.orange-text {
+  color: $aprio-orange;
+}
+
+.yellow-font-colour {
+  color: #f5d6a2;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.off-white-strong-font-style {
+  color: $off-white;
+  font-weight: 500;
+  font-style: normal;
+}
+
+// 4. Shared Components
+
+// Start of explore selected case studies line - https://codepen.io/pavelderschleifer/pen/jrXpgq
+#wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+#wrapper-inner {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+// End of explore selected case studies line
+
+// Boiler Plate
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
