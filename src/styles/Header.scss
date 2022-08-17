@@ -1,4 +1,4 @@
-@import "index";
+@import 'index';
 
 .nav-wrapper {
   background: $main-background-colour-dark;
@@ -6,6 +6,62 @@
   z-index: 1000000;
   width: 100%;
   position: fixed;
+
+  .logo {
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+
+    a {
+      height: max-content;
+    }
+
+    img {
+      width: fit-content;
+    }
+  }
+
+  .logo1 {
+    transform: rotateY(0deg) rotateX(0deg) translateZ(-2.75vw);
+    transform-style: preserve-3d;
+    transition: transform 0.25s ease-in-out;
+    position: relative;
+    height: 4.05vw;
+    width: 4.05vw;
+    left: 0;
+    z-index: 99;
+  }
+
+  .logo2 {
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: rotateX(-90deg) translateZ(-2.5vw);
+    transition: transform 0.2s ease-in-out;
+    height: 4.05vw;
+    width: 4.05vw;
+    left: 0;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo:hover {
+    .logo1 {
+      transform: translateZ(0vw) rotateY(0deg) translateY(1.7vw) rotateX(90deg);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .logo2 {
+      transform: translateZ(-2.5vw) rotateY(0deg) rotateX(0deg);
+      transition: transform 0.25s ease-in-out;
+    }
+  }
+
+  #logo-light {
+    display: none;
+  }
 
   .navbar {
     position: initial;
@@ -39,18 +95,19 @@
           position: relative;
           text-decoration: none;
           transition: all 0.5s ease;
+          -webkit-transition: all 0.5s ease;
         }
 
         a:hover {
           /* border-bottom: 1px solid rgb(28, 121, 184); */
           color: rgb(28, 121, 184);
           transition: all 1s ease;
+          -webkit-transition: all 1s ease;
         }
 
         /* Animated Bottom Line */
-        a:before,
-        a:after {
-          content: "";
+        a:before, a:after {
+          content: '';
           position: absolute;
           width: 0%;
           height: 1px;
@@ -83,19 +140,18 @@
       }
 
       .menu-item.active {
-        a:before,
-        a:after {
+        a:before, a:after {
           width: 100%;
         }
       }
     }
 
-    @media (max-width: 640px) {
+    @media(max-width: 640px) {
       #navbar ul {
         display: none;
       }
     }
-    @media (orientation: landscape) {
+    @media(orientation: landscape) {
       #navbar ul {
         display: inline-block;
       }
@@ -103,7 +159,77 @@
   }
 }
 
-@media screen and (max-width: $mobile-view-max-width) {
+.nav-wrapper.light-mode {
+  background-color: $off-white;
+
+  h3 {
+    color: $black;
+  }
+
+  .navbar {
+    .menu {
+      .menu-item {
+        a {
+          display: block;
+          position: relative;
+          text-decoration: none;
+          transition: all 0.5s ease;
+          -webkit-transition: all 0.5s ease;
+        }
+
+        a:hover {
+          /* border-bottom: 1px solid rgb(28, 121, 184); */
+          color: rgb(28, 121, 184);
+          transition: all 1s ease;
+          -webkit-transition: all 1s ease;
+        }
+
+        /* Animated Bottom Line */
+        a:before, a:after {
+          content: '';
+          position: absolute;
+          width: 0%;
+          height: 1px;
+          bottom: 0;
+          background: $black !important;
+        }
+
+        a:before {
+          left: 0;
+          transition: 0.5s;
+        }
+
+        a:after {
+          background: $black !important;
+          right: 0;
+          transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        a:hover:before {
+          background: $black !important;
+          width: 100%;
+          transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        a:hover:after {
+          background: transparent;
+          width: 100%;
+          /* transition: 0s; */
+        }
+      }
+    }
+  }
+
+  #logo {
+    display: none;
+  }
+
+  #logo-light {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: $mobile-view-max-width){
   .nav-wrapper {
     .navbar {
       width: $default-mobile-margin-width;
