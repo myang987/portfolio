@@ -1,9 +1,23 @@
 @import "index";
 
+.title-head {
+  display: flex;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  margin-bottom: 60px;
+  display: inline-flex;
+  margin: auto;
+
+  img{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
+
 .about-page {
   background-color: $main-background-colour-dark;
   width: $default-margin-width;
   margin: auto;
-  padding-top: 12vw;
-  padding-bottom: 7vw;
 }
